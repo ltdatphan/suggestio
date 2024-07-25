@@ -1,5 +1,3 @@
-import React from 'react'
-
 type Props = {
   coverImgUrl?: string | null
   title: string

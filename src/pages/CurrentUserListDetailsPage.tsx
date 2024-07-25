@@ -86,12 +86,12 @@ const CurrentUserListDetailsPage = () => {
                       setItem={
                         isOwner
                           ? () => {
-                              setTargetItemInfo({
-                                id: item.id.toString(),
-                                title: item.itemName,
-                                img: item.itemUrl,
-                              })
-                            }
+                            setTargetItemInfo({
+                              id: item.id.toString(),
+                              title: item.itemName,
+                              img: item.itemUrl,
+                            })
+                          }
                           : null
                       }
                     />
@@ -101,7 +101,7 @@ const CurrentUserListDetailsPage = () => {
           ))}
           {paginatedItems?.pages.every(
             (page) =>
-              !Array.isArray(page.data.items) || page.data.items.length === 0
+              !Array.isArray(page.data.items) || page.data.items.length === 0,
           ) && (
             <EmptyState
               title="No items found"
@@ -124,8 +124,8 @@ const CurrentUserListDetailsPage = () => {
           menuFn={
             isOwner
               ? () => {
-                  toggleListMenu()
-                }
+                toggleListMenu()
+              }
               : null
           }
         />

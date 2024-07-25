@@ -33,10 +33,10 @@ const OtherUserProfilePage = () => {
 
     //Follow and unfollow
     isFollowPending,
-    followError,
+    // followError,
     followFn,
     isUnfollowPending,
-    unfollowError,
+    // unfollowError,
     unfollowFn,
   } = useOtherUserProfilePage(username)
 

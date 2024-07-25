@@ -1,8 +1,8 @@
 import api, { extractErrorMessages } from './_config'
 
 export async function getCurrentUserLists({
-  pageParam,
-}: {
+                                            pageParam,
+                                          }: {
   pageParam: number
 }): Promise<{
   data: models.list.IPaginatedListsResponse
@@ -40,8 +40,8 @@ export async function getCurrentUserLists({
 }
 
 export async function getFollowingLists({
-  pageParam,
-}: {
+                                          pageParam,
+                                        }: {
   pageParam: number
 }): Promise<{
   data: models.list.IPaginatedListsResponse
@@ -79,7 +79,7 @@ export async function getFollowingLists({
 }
 
 export async function createList(
-  newListRequest: models.list.IListCreateRequest
+  newListRequest: models.list.IListCreateRequest,
 ) {
   try {
     const { data }: { data: models.list.IGeneralListResponseProps } =
@@ -132,7 +132,7 @@ export async function getListItems(
   }: {
     pageParam: number
   },
-  listId: number
+  listId: number,
 ): Promise<{
   data: models.item.IPaginatedItemsResponse
   currentPage: number
@@ -167,7 +167,7 @@ export async function getListItems(
 
 export async function getPublicListItems(
   listId: number,
-  WithItems: boolean = true
+  WithItems: boolean = true,
 ) {
   try {
     const { data }: { data: models.item.IItemPublicResponseProps[] } =
@@ -191,7 +191,7 @@ export async function getPublicListItems(
 
 export async function editList(
   listId: number,
-  editListRequest: models.list.IListUpdateRequest
+  editListRequest: models.list.IListUpdateRequest,
 ) {
   try {
     const { data }: { data: models.list.IGeneralListResponseProps } =
@@ -248,7 +248,7 @@ export async function searchLists(
   }: {
     pageParam: number
   },
-  query: string
+  query: string,
 ): Promise<{
   data: models.list.IPaginatedListsResponse
   currentPage: number

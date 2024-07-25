@@ -40,7 +40,7 @@ const ProtectedRoute = (props: PropType) => {
                 console.error(
                   'Error caught by ErrorBoundary: ',
                   error,
-                  errorInfo
+                  errorInfo,
                 )
               }}
             >
@@ -62,7 +62,7 @@ const ProtectedRoute = (props: PropType) => {
                 console.error(
                   'Error caught by ErrorBoundary: ',
                   error,
-                  errorInfo
+                  errorInfo,
                 )
               }}
             >
@@ -83,7 +83,7 @@ const ProtectedRoute = (props: PropType) => {
                 console.error(
                   'Error caught by ErrorBoundary: ',
                   error,
-                  errorInfo
+                  errorInfo,
                 )
               }}
             >

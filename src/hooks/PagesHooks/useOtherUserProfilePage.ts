@@ -18,14 +18,14 @@ const useOtherUserProfilePage = (username: string) => {
 
   const {
     isPending: isFollowPending,
-    data: followData,
+    // data: followData,
     error: followError,
     mutate: followFn,
   } = useFollowAction(profile?.username ? profile.username : '')
 
   const {
     isPending: isUnfollowPending,
-    data: unfollowData,
+    // data: unfollowData,
     error: unfollowError,
     mutate: unfollowFn,
   } = useUnfollowAction(profile?.username ? profile.username : '')

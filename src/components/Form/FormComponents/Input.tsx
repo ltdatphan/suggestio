@@ -1,10 +1,5 @@
 import React from 'react'
-import {
-  Field,
-  Label,
-  Input as HeadlessInput,
-  Description,
-} from '@headlessui/react'
+import { Description, Field, Input as HeadlessInput, Label } from '@headlessui/react'
 import { ControllerFieldState, ControllerRenderProps } from 'react-hook-form'
 
 type SpecificInputType = {

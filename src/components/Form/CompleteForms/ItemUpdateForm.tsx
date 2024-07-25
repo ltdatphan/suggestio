@@ -17,7 +17,7 @@ type Props = {
   toggleOpen: () => void
 }
 
-type VisibleInput = {
+export type VisibleInput = {
   rating: boolean
   notes: boolean
   link: boolean

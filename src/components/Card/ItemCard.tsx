@@ -1,8 +1,4 @@
-import {
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
-} from '@headlessui/react'
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import { BsThreeDots } from 'react-icons/bs'
 import { FaChevronDown } from 'react-icons/fa'
 import { IoIosLink } from 'react-icons/io'
@@ -58,7 +54,7 @@ const ItemImg = ({ itemImgUrl }: { itemImgUrl: string | null }) => {
 }
 
 const ItemCard = (
-  props: models.item.IItemProps & { setItem?: (() => void) | null }
+  props: models.item.IItemProps & { setItem?: (() => void) | null },
 ) => {
   const { itemName, itemImgUrl, subtitle, rating, notes, itemUrl, setItem } =
     props
@@ -95,7 +91,8 @@ const ItemCard = (
               <div className="ml-2 flex justify-center">
                 {(notes || itemUrl) && (
                   <div className="px-1 py-2">
-                    <FaChevronDown className="size-4 text-gray-500 transition duration-200 ease-in-out group-data-[open]:rotate-180" />
+                    <FaChevronDown
+                      className="size-4 text-gray-500 transition duration-200 ease-in-out group-data-[open]:rotate-180" />
                   </div>
                 )}
               </div>

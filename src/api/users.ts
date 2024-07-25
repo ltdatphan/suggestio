@@ -6,7 +6,7 @@ export async function searchUsers(
   }: {
     pageParam: number
   },
-  query: string
+  query: string,
 ): Promise<{
   data: models.user.IPaginatedUserResponse
   currentPage: number
@@ -71,7 +71,7 @@ export async function getCurrentUserLists() {
       'me/lists',
       {
         withCredentials: true,
-      }
+      },
     )
     return data
   } catch (error: any) {
@@ -104,7 +104,7 @@ export async function getUserProfileByUsername(username: string) {
     //Network error
     if (error.message) {
       throw new Error(
-        'Error getting the specified profile. Please try again later'
+        'Error getting the specified profile. Please try again later',
       )
     }
     // Fallback to a generic error message
@@ -118,7 +118,7 @@ export async function getUserListsByUsername(
   }: {
     pageParam: number
   },
-  username: string
+  username: string,
 ): Promise<{
   data: models.list.IPaginatedListsResponse
   currentPage: number
@@ -142,7 +142,7 @@ export async function getUserListsByUsername(
     //Network error
     if (error.message) {
       throw new Error(
-        'Error getting the specified profile. Please try again later.'
+        'Error getting the specified profile. Please try again later.',
       )
     }
     // Fallback to a generic error message

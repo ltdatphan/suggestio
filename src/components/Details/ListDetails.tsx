@@ -41,7 +41,7 @@ const ListDetails = (props: Props) => {
     isPublic,
     itemCount,
     createdAt,
-    updatedAt,
+    // updatedAt,
     ownerUsername,
     ownerProfileImgUrl,
   } = props.data

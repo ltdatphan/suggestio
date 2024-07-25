@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import UserBadge from '../Badge/UserBadge'
 import ListCardPreviewImg from '../CoverImage/ListCardPreviewImg'
@@ -8,7 +7,7 @@ const OtherUserListCard = (props: models.list.IPublicListResponseProps) => {
 
   let path = `/following/lists/${id}/details`
   if ('ownerUsername' in props) {
-    path = `/users/${props.ownerUsername}/lists/${id}/details`
+    path = `/users/${ownerUsername}/lists/${id}/details`
   }
 
   return (
@@ -23,8 +22,8 @@ const OtherUserListCard = (props: models.list.IPublicListResponseProps) => {
           {'ownerUsername' in props ? (
             <UserBadge
               // fullName={props.ownerFullName}
-              username={props.ownerUsername}
-              profileImgUrl={props.ownerProfileImgUrl}
+              username={ownerUsername}
+              profileImgUrl={ownerProfileImgUrl}
             />
           ) : null}
         </div>

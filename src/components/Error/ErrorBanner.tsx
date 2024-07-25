@@ -1,4 +1,3 @@
-import React from 'react'
 import { MdError } from 'react-icons/md'
 
 type Props = {
@@ -12,7 +11,7 @@ const ErrorBanner = (props: Props) => {
         <MdError className="size-14 text-red-500" />
         <span className="text-xl font-semibold">Error</span>
         <p className="mt-2 text-center">
-          {props.error.message.split('.').map((l, i) => (
+          {props.error.message.split('.').map((l, _) => (
             <>
               {l} <br />
             </>

@@ -12,7 +12,7 @@ type Props = {
     inputType: keyof VisibleInput,
     formKey:
       | keyof models.form.IItemCreateFormProps
-      | keyof models.form.IItemEditFormProps
+      | keyof models.form.IItemEditFormProps,
   ) => void
 }
 

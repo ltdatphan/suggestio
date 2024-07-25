@@ -4,7 +4,7 @@ import { VisibilityBadge } from '../Badge/VisibilityBadge'
 import ListCardPreviewImg from '../CoverImage/ListCardPreviewImg'
 
 const CurrentUserListCard = (
-  props: models.list.IBasicListResponseProps & { showMenu?: () => void }
+  props: models.list.IBasicListResponseProps & { showMenu?: () => void },
 ) => {
   const { id, title, isPublic, coverImgUrl, showMenu } = props
 

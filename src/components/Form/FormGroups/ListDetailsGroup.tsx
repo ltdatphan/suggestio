@@ -1,4 +1,3 @@
-import React from 'react'
 import { Control, Controller } from 'react-hook-form'
 import { IoGlobeOutline, IoLockClosedOutline } from 'react-icons/io5'
 import Input from '../FormComponents/Input'

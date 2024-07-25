@@ -19,7 +19,8 @@ const TabNavigation = () => {
   return (
     <div className="fixed top-16 z-40 flex h-16 items-center justify-center md:top-0">
       <TabGroup>
-        <TabList className="flex gap-2 rounded-full border-[1px] border-light-gray bg-white p-[0.35rem] backdrop-blur-sm">
+        <TabList
+          className="flex gap-2 rounded-full border-[1px] border-light-gray bg-white p-[0.35rem] backdrop-blur-sm">
           {tabs.map((tab, i) => (
             <Tab
               key={i}

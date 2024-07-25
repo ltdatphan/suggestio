@@ -28,7 +28,7 @@ const useSearchResultPage = () => {
 
   const { data, status, error, fetchNextPage, isFetchingNextPage } = useSearch(
     searchParams.get('query') || '',
-    targetType
+    targetType,
   )
 
   const onSubmit = async (data: SearchInput) => {

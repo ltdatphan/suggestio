@@ -1,4 +1,3 @@
-import React from 'react'
 import { IoClose, IoWarning } from 'react-icons/io5'
 
 type Props = {

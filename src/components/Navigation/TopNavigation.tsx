@@ -1,4 +1,3 @@
-import React from 'react'
 import { BsThreeDots } from 'react-icons/bs'
 import { IoChevronBack } from 'react-icons/io5'
 import { useNavigate } from 'react-router-dom'

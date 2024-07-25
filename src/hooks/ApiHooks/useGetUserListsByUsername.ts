@@ -3,7 +3,7 @@ import { getUserListsByUsername } from '../../api/users'
 
 const useGetUserListsByUsername = (
   username: string,
-  enabled: boolean = true
+  enabled: boolean = true,
 ) => {
   const { data, status, error, fetchNextPage, isFetchingNextPage } =
     useInfiniteQuery({

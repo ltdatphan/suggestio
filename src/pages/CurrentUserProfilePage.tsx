@@ -73,7 +73,7 @@ const CurrentUserProfilePage = () => {
           ))}
           {data?.pages.every(
             (page) =>
-              !Array.isArray(page.data.lists) || page.data.lists.length === 0
+              !Array.isArray(page.data.lists) || page.data.lists.length === 0,
           ) && (
             <EmptyState
               variant="add-friends"

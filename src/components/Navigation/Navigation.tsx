@@ -1,14 +1,11 @@
-import React from 'react'
 import { IconType } from 'react-icons'
 import { FaRegUserCircle, FaUserCircle } from 'react-icons/fa'
 import {
   IoAddCircle,
   IoAddCircleOutline,
-  IoAddCircleSharp,
   IoHome,
   IoHomeOutline,
   IoLogOut,
-  IoNotificationsOutline,
   IoSearch,
   IoSearchOutline,
 } from 'react-icons/io5'

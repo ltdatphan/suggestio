@@ -55,7 +55,7 @@ const OtherUserListDetailsPage = () => {
           ))}
           {paginatedItems?.pages.every(
             (page) =>
-              !Array.isArray(page.data.items) || page.data.items.length === 0
+              !Array.isArray(page.data.items) || page.data.items.length === 0,
           ) && (
             <EmptyState
               title="No items found"

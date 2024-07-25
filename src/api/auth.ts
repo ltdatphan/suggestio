@@ -9,7 +9,7 @@ export async function loginUser(loginRequestDto: models.auth.ILoginRequest) {
         username: username,
         password: password,
       },
-      { withCredentials: true }
+      { withCredentials: true },
     )
     return data
   } catch (error: any) {

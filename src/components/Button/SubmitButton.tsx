@@ -1,5 +1,6 @@
 import { lineSpinner } from 'ldrs'
 import React from 'react'
+
 lineSpinner.register()
 
 type StatePropTypes = {

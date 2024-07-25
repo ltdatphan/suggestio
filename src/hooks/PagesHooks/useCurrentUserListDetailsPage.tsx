@@ -29,10 +29,10 @@ const useCurrentUserListDetailsPage = (listId: number) => {
 
   // States and functions for menu + modal
   const [targetListInfo, setTargetListInfo] = useState<TargetInfoType | null>(
-    null
+    null,
   )
   const [targetItemInfo, setTargetItemInfo] = useState<TargetInfoType | null>(
-    null
+    null,
   )
   const [showListModal, setShowListModal] = useState(false)
   const [showItemModal, setShowItemModal] = useState(false)
@@ -88,8 +88,8 @@ const useCurrentUserListDetailsPage = (listId: number) => {
       Icon: FaPenToSquare,
       func: () => {
         targetItemInfo &&
-          targetItemInfo?.id &&
-          setTargetItemId(parseInt(targetItemInfo.id))
+        targetItemInfo?.id &&
+        setTargetItemId(parseInt(targetItemInfo.id))
         setTargetItemInfo(null)
         setShowItemModal(false)
         toggleOpenUpdateForm()

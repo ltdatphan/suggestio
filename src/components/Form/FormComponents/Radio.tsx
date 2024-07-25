@@ -3,8 +3,6 @@ import React from 'react'
 import { ControllerFieldState, ControllerRenderProps } from 'react-hook-form'
 import { IconType } from 'react-icons'
 
-const plans = ['Startup', 'Business', 'Enterprise']
-
 type RadioType = {
   label: string
   value: string
@@ -23,7 +21,7 @@ type PropType = RadioOptionsType &
   React.ComponentProps<'input'>
 
 const Category = (props: PropType) => {
-  const { name, value, label, onChange, error, radioItems } = props
+  const { name, value, label, onChange, radioItems } = props
 
   return (
     <>

@@ -22,9 +22,9 @@ const LoginPage = () => {
             control={control}
             rules={{ required: 'Username is required' }}
             render={({
-              field: { name, onChange, value },
-              fieldState: { error },
-            }) => (
+                       field: { name, onChange, value },
+                       fieldState: { error },
+                     }) => (
               <Input
                 label="Username"
                 type="text"
@@ -40,9 +40,9 @@ const LoginPage = () => {
             control={control}
             rules={{ required: 'Password is required' }}
             render={({
-              field: { name, onChange, value },
-              fieldState: { error },
-            }) => (
+                       field: { name, onChange, value },
+                       fieldState: { error },
+                     }) => (
               <Input
                 label="Password"
                 type="password"

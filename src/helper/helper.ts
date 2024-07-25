@@ -1,6 +1,6 @@
 export function deepEqual(
   obj1: { [key: string]: any },
-  obj2: { [key: string]: any }
+  obj2: { [key: string]: any },
 ) {
   if (obj1 === obj2) {
     return true

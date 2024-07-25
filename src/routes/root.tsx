@@ -10,8 +10,8 @@ const root = () => {
         <TopMainNavigation />
 
         <body className="mt-32 md:relative md:mt-16">
-          <TabNavigation />
-          <Outlet />
+        <TabNavigation />
+        <Outlet />
         </body>
         <Navigation />
       </div>

@@ -41,9 +41,9 @@ const ExplorePage = () => {
             control={control}
             rules={{ required: 'Please enter search query' }}
             render={({
-              field: { name, onChange, value },
-              fieldState: { error },
-            }) => (
+                       field: { name, onChange, value },
+                       fieldState: { error },
+                     }) => (
               <SearchListBox
                 name={name}
                 onChange={onChange}
@@ -59,9 +59,9 @@ const ExplorePage = () => {
               required: 'Please enter search query',
             }}
             render={({
-              field: { name, onChange, value },
-              fieldState: { error },
-            }) => (
+                       field: { name, onChange, value },
+                       fieldState: { error },
+                     }) => (
               <Search
                 label="Search input"
                 name={name}

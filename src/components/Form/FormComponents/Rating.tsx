@@ -1,6 +1,4 @@
-import React from 'react'
 import { FaRegStar, FaStar, FaStarHalf } from 'react-icons/fa'
-type Props = {}
 
 const maxStars = 5
 

@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
-import { Control, Controller, FieldValues } from 'react-hook-form'
-import { VisibleInput } from '../CompleteForms/ItemCreateUpdateForm'
+import { Control, Controller } from 'react-hook-form'
+// import { VisibleInput } from '../CompleteForms/ItemCreateUpdateForm'
+import { VisibleInput } from '../CompleteForms/ItemCreateForm'
 import Input from '../FormComponents/Input'
 import TextArea from '../FormComponents/TextArea'
 
 type Props = {
-  control: Control<models.form.ItemCreateUpdateFormPropsType>
+  control: Control<models.form.IItemCreateFormProps>
   visibleInputs: VisibleInput
 }
 

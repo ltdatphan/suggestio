@@ -1,4 +1,3 @@
-import React from 'react'
 import ConfirmationModal from '../Modal/ConfirmationModal'
 import GenericMenu, { MenuItemType, TargetInfoType } from './GenericMenu'
 

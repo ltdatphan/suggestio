@@ -6,7 +6,7 @@ type SearchResultStoreType = {
   searchResult: models.user.IUserSearchResultProps[] | null
   setQuery: (newQuery: string) => void
   setSearchResult: (
-    newSearchResult: models.user.IUserSearchResultProps[]
+    newSearchResult: models.user.IUserSearchResultProps[],
   ) => void
   clear: () => void
 }
@@ -23,6 +23,6 @@ export const useSearchResultStore = create<SearchResultStoreType>()(
     }),
     {
       name: 'search-result-storage',
-    }
-  )
+    },
+  ),
 )

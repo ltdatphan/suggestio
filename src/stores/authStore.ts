@@ -26,6 +26,6 @@ export const useAuthStore = create<AuthStoreType>()(
     }),
     {
       name: 'auth-storage',
-    }
-  )
+    },
+  ),
 )

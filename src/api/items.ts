@@ -6,7 +6,7 @@ export async function getItem(itemId: number) {
       `items/${itemId}`,
       {
         withCredentials: true,
-      }
+      },
     )
     return data
   } catch (error: any) {
@@ -25,7 +25,7 @@ export async function getItem(itemId: number) {
 
 export async function createItem(
   itemId: number,
-  newItemRequest: models.item.IItemCreateRequest
+  newItemRequest: models.item.IItemCreateRequest,
 ) {
   try {
     const { data }: { data: models.list.IListResponseProps[] } = await api.post(
@@ -33,7 +33,7 @@ export async function createItem(
       newItemRequest,
       {
         withCredentials: true,
-      }
+      },
     )
     return data
   } catch (error: any) {
@@ -59,7 +59,7 @@ export async function createItem(
 
 export async function updateItem(
   itemId: number,
-  updateItemRequest: models.item.IItemUpdateRequest
+  updateItemRequest: models.item.IItemUpdateRequest,
 ) {
   try {
     const { data }: { data: models.list.IListResponseProps[] } = await api.put(
@@ -67,7 +67,7 @@ export async function updateItem(
       updateItemRequest,
       {
         withCredentials: true,
-      }
+      },
     )
     return data
   } catch (error: any) {

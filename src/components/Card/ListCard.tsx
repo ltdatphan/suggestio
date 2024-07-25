@@ -86,7 +86,7 @@ const ListCard = (props: ListCardPropType) => {
     ownerUsername,
     ownerProfileImgUrl,
     createdAt,
-    updatedAt,
+    // updatedAt,
   } = props
 
   const formatTimeAgo = (date: Date) => {

@@ -48,7 +48,7 @@ api.interceptors.request.use(
     }
     return config
   },
-  (error) => Promise.reject(error)
+  (error) => Promise.reject(error),
 )
 
 // Response interceptor
@@ -109,12 +109,12 @@ api.interceptors.response.use(
     }
     // If the error is not 401 or the request has already been retried, reject the promise with the error
     return Promise.reject(error)
-  }
+  },
 )
 
 export function extractErrorMessages(
   errorResponse: AxiosResponse<any>,
-  genericResponse: string = 'An unknown error occurred'
+  genericResponse: string = 'An unknown error occurred',
 ) {
   // Check the structure of the error response from your API
   if (errorResponse.data?.errors) {

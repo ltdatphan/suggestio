@@ -11,6 +11,7 @@ import { TargetInfoType } from '../components/Menu/GenericMenu'
 import MenuWithModal from '../components/Menu/MenuWithModal'
 import useHomePage from '../hooks/PagesHooks/useHomePage'
 import usePageTitle from '../hooks/usePageTitle'
+
 const HomePage = () => {
   const navigate = useNavigate()
   usePageTitle('Home')
@@ -67,7 +68,7 @@ const HomePage = () => {
         ))}
         {data?.pages.every(
           (page) =>
-            !Array.isArray(page.data.lists) || page.data.lists.length === 0
+            !Array.isArray(page.data.lists) || page.data.lists.length === 0,
         ) && (
           <EmptyState
             variant="add-friends"

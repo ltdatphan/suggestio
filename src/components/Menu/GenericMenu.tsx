@@ -49,7 +49,8 @@ const GenericMenu = (props: Props) => {
                 {targetInfo.img ? (
                   <img src={targetInfo.img} className="size-16 rounded-lg" />
                 ) : (
-                  <div className="size-16 rounded-lg bg-gradient-to-tr from-custom-orange-300 to-custom-yellow-200"></div>
+                  <div
+                    className="size-16 rounded-lg bg-gradient-to-tr from-custom-orange-300 to-custom-yellow-200"></div>
                 )}
               </div>
               <span className="line-clamp-2 overflow-hidden text-ellipsis text-base/6 font-medium md:text-lg/6">

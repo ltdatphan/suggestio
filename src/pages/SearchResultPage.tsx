@@ -50,9 +50,9 @@ const SearchResultPage = () => {
               control={control}
               rules={{ required: 'Please enter search query' }}
               render={({
-                field: { name, onChange, value },
-                fieldState: { error },
-              }) => (
+                         field: { name, onChange, value },
+                         fieldState: { error },
+                       }) => (
                 <SearchListBox
                   name={name}
                   onChange={onChange}
@@ -66,9 +66,9 @@ const SearchResultPage = () => {
               control={control}
               rules={{ required: 'Please enter search query' }}
               render={({
-                field: { name, onChange, value },
-                fieldState: { error },
-              }) => (
+                         field: { name, onChange, value },
+                         fieldState: { error },
+                       }) => (
                 <Search
                   label="Search input"
                   name={name}
@@ -101,7 +101,7 @@ const SearchResultPage = () => {
             ))}
             {data.usersData?.pages.every(
               (page) =>
-                !Array.isArray(page.data.users) || page.data.users.length === 0
+                !Array.isArray(page.data.users) || page.data.users.length === 0,
             ) && (
               <EmptyState
                 title={`No results for "${query}"`}
@@ -127,7 +127,7 @@ const SearchResultPage = () => {
             ))}
             {data.listsData?.pages.every(
               (page) =>
-                !Array.isArray(page.data.lists) || page.data.lists.length === 0
+                !Array.isArray(page.data.lists) || page.data.lists.length === 0,
             ) && (
               <EmptyState
                 title={`No results for "${query}"`}

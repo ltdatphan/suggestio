@@ -1,5 +1,6 @@
 import { AddFriends, Empty, Void } from '../../assets'
 import PrimaryButton from '../Button/PrimaryButton'
+
 type Props = {
   variant?: 'empty' | 'add-friends' | 'no-data' | 'void'
   title: string

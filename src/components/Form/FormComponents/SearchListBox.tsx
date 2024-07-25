@@ -1,10 +1,4 @@
-import {
-  Field,
-  Listbox,
-  ListboxButton,
-  ListboxOption,
-  ListboxOptions,
-} from '@headlessui/react'
+import { Field, Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headlessui/react'
 import React from 'react'
 import { ControllerFieldState, ControllerRenderProps } from 'react-hook-form'
 import { IoChevronDown } from 'react-icons/io5'
@@ -24,7 +18,8 @@ const SearchListBox = (props: PropType) => {
     <Field>
       <div className="inset-y-0 flex items-center">
         <Listbox value={value} onChange={onChange}>
-          <ListboxButton className="relative z-10 block w-20 rounded-l-full border-y border-l border-light-gray bg-custom-orange-200 py-2 pl-4 pr-16 text-left text-sm/6 font-medium focus:outline-none data-[focus]:outline-2 data-[focus]:-outline-offset-2 data-[focus]:outline-white/25">
+          <ListboxButton
+            className="relative z-10 block w-20 rounded-l-full border-y border-l border-light-gray bg-custom-orange-200 py-2 pl-4 pr-16 text-left text-sm/6 font-medium focus:outline-none data-[focus]:outline-2 data-[focus]:-outline-offset-2 data-[focus]:outline-white/25">
             {searchOptions.find((op) => op.value === value)?.label}
             <IoChevronDown
               className="group pointer-events-none absolute right-1.5 top-3 size-4 fill-white/60"

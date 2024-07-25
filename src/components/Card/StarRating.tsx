@@ -1,8 +1,4 @@
-import React from 'react'
-import { FaRegStar, FaStar, FaStarHalf } from 'react-icons/fa'
-type Props = {}
-
-const maxStars = 5
+import { FaStar, FaStarHalf } from 'react-icons/fa'
 
 const StarRating = ({ rating }: { rating: number }) => {
   const fullStars = Math.floor(rating)

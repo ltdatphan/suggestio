@@ -1,5 +1,3 @@
-import React from 'react'
-import { IoNotificationsOutline } from 'react-icons/io5'
 import { Link } from 'react-router-dom'
 import ProfileMenu from './ProfileMenu'
 import Logo from '/suggestio.svg'
