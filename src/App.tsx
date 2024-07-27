@@ -6,20 +6,31 @@ import NotFoundPage from './pages/NotFoundPage.tsx'
 
 import { useAuth } from './hooks/useAuth.ts'
 
-import Landing from './pages/Landing.tsx'
+import LandingPage from './pages/LandingPage.tsx'
 
+import { lazy, Suspense } from 'react'
 import { Toaster } from 'react-hot-toast'
-import CreateListPage from './pages/CreateListPage.tsx'
-import CurrentUserListDetailsPage from './pages/CurrentUserListDetailsPage.tsx'
-import CurrentUserProfilePage from './pages/CurrentUserProfilePage.tsx'
-import ExplorePage from './pages/ExplorePage.tsx'
-import FollowingPage from './pages/FollowingPage.tsx'
-import OtherUserListDetailsPage from './pages/OtherUserListDetailsPage.tsx'
-import OtherUserProfilePage from './pages/OtherUserProfilePage.tsx'
-import Saved from './pages/Saved.tsx'
-import SearchResultPage from './pages/SearchResultPage.tsx'
-import UpdateListPage from './pages/UpdateListPage.tsx'
-import ProtectedRoute from './routes/ProtectedRoute.tsx'
+
+const CreateListPage = lazy(() => import('./pages/CreateListPage.tsx'))
+const CurrentUserListDetailsPage = lazy(
+  () => import('./pages/CurrentUserListDetailsPage.tsx')
+)
+const CurrentUserProfilePage = lazy(
+  () => import('./pages/CurrentUserProfilePage.tsx')
+)
+const ExplorePage = lazy(() => import('./pages/ExplorePage.tsx'))
+const FollowingPage = lazy(() => import('./pages/FollowingPage.tsx'))
+const OtherUserListDetailsPage = lazy(
+  () => import('./pages/OtherUserListDetailsPage.tsx')
+)
+const OtherUserProfilePage = lazy(
+  () => import('./pages/OtherUserProfilePage.tsx')
+)
+const Saved = lazy(() => import('./pages/Saved.tsx'))
+const SearchResultPage = lazy(() => import('./pages/SearchResultPage.tsx'))
+const SignUpPage = lazy(() => import('./pages/SignUpPage.tsx'))
+const UpdateListPage = lazy(() => import('./pages/UpdateListPage.tsx'))
+const ProtectedRoute = lazy(() => import('./routes/ProtectedRoute.tsx'))
 
 const App = () => {
   const { isLoggedIn } = useAuth()
@@ -30,11 +41,15 @@ const App = () => {
       children: [
         {
           path: '',
-          element: !isLoggedIn ? <Landing /> : <Navigate to="/home" />,
+          element: !isLoggedIn ? <LandingPage /> : <Navigate to="/home" />,
         },
         {
           path: 'login',
           element: !isLoggedIn ? <LoginPage /> : <Navigate to="/home" />,
+        },
+        {
+          path: 'signup',
+          element: !isLoggedIn ? <SignUpPage /> : <Navigate to="/home" />,
         },
       ],
     },
@@ -121,8 +136,9 @@ const App = () => {
 
   return (
     <>
-      <RouterProvider router={router} />
-      {/* <ScrollToTop /> */}
+      <Suspense fallback={<div>Loading...</div>}>
+        <RouterProvider router={router} />
+      </Suspense>
       <Toaster />
     </>
   )

@@ -9,7 +9,7 @@ export async function loginUser(loginRequestDto: models.auth.ILoginRequest) {
         username: username,
         password: password,
       },
-      { withCredentials: true },
+      { withCredentials: true }
     )
     return data
   } catch (error: any) {
@@ -27,6 +27,45 @@ export async function loginUser(loginRequestDto: models.auth.ILoginRequest) {
     //Network error
     if (error.message) {
       throw new Error('Error logging in. Please try again later.')
+    }
+    // Fallback to a generic error message
+    throw new Error('An unknown error occurred')
+  }
+}
+
+export async function registerUser(
+  registerRequestDto: models.auth.IRegisterRequest
+) {
+  try {
+    const { username, password, firstName, lastName, email } =
+      registerRequestDto
+    const { data }: { data: models.auth.ILoginResponse } = await api.post(
+      'account/register',
+      {
+        username: username,
+        password: password,
+        email: email,
+        firstName: firstName,
+        lastName: lastName,
+      },
+      { withCredentials: true }
+    )
+    return data
+  } catch (error: any) {
+    // Validation error for forms with many error messages
+    if (error.response && error.response.data && error.response.status == 400) {
+      const errMessage = extractErrorMessages(error.response)
+      throw new Error(errMessage)
+    }
+
+    //For server responses with just string
+    if (error.response && error.response.data) {
+      throw new Error(error.response.data)
+    }
+
+    //Network error
+    if (error.message) {
+      throw new Error('Error registering. Please try again later.')
     }
     // Fallback to a generic error message
     throw new Error('An unknown error occurred')

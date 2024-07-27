@@ -48,7 +48,7 @@ api.interceptors.request.use(
     }
     return config
   },
-  (error) => Promise.reject(error),
+  (error) => Promise.reject(error)
 )
 
 // Response interceptor
@@ -80,18 +80,21 @@ api.interceptors.response.use(
       }
 
       originalConfig._retry = true // Mark the request as retried
+      const isLoggedIn = useAuthStore.getState().isLoggedIn
 
-      try {
-        // Attempt to refresh the token
-        await refreshToken()
+      if (isLoggedIn) {
+        try {
+          // Attempt to refresh the token
+          await refreshToken()
 
-        // Update the Authorization header with the new token
-        // Assuming your `refreshToken` function handles updating the token in the `api` instance
-        return api(originalConfig) // Retry the original request with the new token
-      } catch (refreshError) {
-        // Handle token refresh failure
-        handleSessionExpireLogOut()
-        return Promise.reject(refreshError)
+          // Update the Authorization header with the new token
+          // Assuming your `refreshToken` function handles updating the token in the `api` instance
+          return api(originalConfig) // Retry the original request with the new token
+        } catch (refreshError) {
+          // Handle token refresh failure
+          handleSessionExpireLogOut()
+          return Promise.reject(refreshError)
+        }
       }
     }
 
@@ -109,12 +112,12 @@ api.interceptors.response.use(
     }
     // If the error is not 401 or the request has already been retried, reject the promise with the error
     return Promise.reject(error)
-  },
+  }
 )
 
 export function extractErrorMessages(
   errorResponse: AxiosResponse<any>,
-  genericResponse: string = 'An unknown error occurred',
+  genericResponse: string = 'An unknown error occurred'
 ) {
   // Check the structure of the error response from your API
   if (errorResponse.data?.errors) {

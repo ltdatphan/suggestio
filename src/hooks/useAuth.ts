@@ -1,11 +1,16 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import toast from 'react-hot-toast'
-import { loginUser, logoutUser } from '../api/auth'
+import { loginUser, logoutUser, registerUser } from '../api/auth'
 import { useAuthStore } from '../stores/authStore'
 
 export const useAuth = () => {
   const queryClient = useQueryClient()
   const { setUser, clearUser, user, isLoggedIn } = useAuthStore()
+
+  // const registerMutation = useMutation({
+  //   mutationFn: ,
+  //   mutationKey: ['Register']
+  // })
 
   const loginMutation = useMutation({
     mutationFn: loginUser,
@@ -30,6 +35,17 @@ export const useAuth = () => {
     },
   })
 
+  const registerMutation = useMutation({
+    mutationFn: registerUser,
+    mutationKey: ['register'],
+    onSuccess: (data) => {
+      setUser(data)
+    },
+    onError: (error) => {
+      toast.error(error.message)
+    },
+  })
+
   return {
     user: user,
     loginMutation: loginMutation,
@@ -40,5 +56,8 @@ export const useAuth = () => {
     logout: logoutMutation.mutate,
     logoutIsPending: logoutMutation.isPending,
     logoutError: logoutMutation.error,
+    register: registerMutation.mutate,
+    registerIsPending: registerMutation.isPending,
+    registerError: registerMutation.error,
   }
 }
