@@ -68,14 +68,14 @@ const HomePage = () => {
         ))}
         {data?.pages.every(
           (page) =>
-            !Array.isArray(page.data.lists) || page.data.lists.length === 0,
+            !Array.isArray(page.data.lists) || page.data.lists.length === 0
         ) && (
           <EmptyState
-            variant="add-friends"
+            variant="empty"
             title="No lists found"
-            message="Follow other users to see their lists here"
-            buttonLabel="Search and follow other users"
-            buttonFunc={() => navigate('/explore')}
+            message="Let's create your first list"
+            buttonLabel="Create a list"
+            buttonFunc={() => navigate('/add')}
           />
         )}
         <div ref={ref}>{isFetchingNextPage && <Fetching />}</div>

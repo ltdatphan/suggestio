@@ -1,4 +1,4 @@
-import { useMutation } from '@tanstack/react-query'
+import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
@@ -6,6 +6,7 @@ import { createList } from '../../api/lists'
 import { isValidListType } from '../../helper/listHelper'
 
 const useCreateListPage = () => {
+  const queryClient = useQueryClient()
   const navigate = useNavigate()
   const [currStep, setCurrStep] = useState(1)
 
@@ -27,6 +28,7 @@ const useCreateListPage = () => {
     mutationKey: ['CreateList'],
     onSuccess: (data: models.list.IListResponseProps) => {
       if (data.id !== undefined) {
+        queryClient.invalidateQueries({ queryKey: ['MyList'] })
         navigate(`/lists/${data.id}/details`, { replace: true })
       }
     },

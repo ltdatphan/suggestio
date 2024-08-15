@@ -11,7 +11,6 @@ const getCsrfToken = () => {
   if (parts.length === 2) {
     const token = parts.pop()
     if (token) {
-      console.log(token)
       return token ? decodeURIComponent(token.split(';').shift() ?? '') : null
     }
   }
@@ -61,16 +60,12 @@ api.interceptors.response.use(
     return response
   },
   async (error) => {
+    // No response from server
     if (!error.response) {
-      // Handle network errors
       return Promise.reject(new Error('Network error'))
     }
 
     const originalConfig = error.config
-
-    if (error.response.status === 500) {
-      return Promise.reject(new Error('Server error'))
-    }
 
     if (error.response.status === 401 && !originalConfig._retry) {
       // Check if the error is a 401 Unauthorized and the request is not already retried
