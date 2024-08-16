@@ -27,8 +27,8 @@ const useCreateListPage = () => {
       createList(newListRequest),
     mutationKey: ['CreateList'],
     onSuccess: (data: models.list.IListResponseProps) => {
+      queryClient.invalidateQueries({ queryKey: ['MyLists'] })
       if (data.id !== undefined) {
-        queryClient.invalidateQueries({ queryKey: ['MyList'] })
         navigate(`/lists/${data.id}/details`, { replace: true })
       }
     },

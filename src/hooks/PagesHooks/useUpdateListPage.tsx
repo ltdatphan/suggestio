@@ -48,6 +48,7 @@ const useUpdateListPage = (listId: number) => {
     mutationKey: ['AddList'],
     onSuccess: (data: models.list.IListResponseProps) => {
       if (data.id !== undefined) {
+        queryClient.invalidateQueries({ queryKey: ['MyLists'] })
         queryClient.invalidateQueries({ queryKey: ['ListDetails', data.id] })
         navigate(`/lists/${data.id}/details`, { replace: true })
       }
